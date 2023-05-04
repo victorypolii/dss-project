@@ -31,6 +31,12 @@ with st.sidebar :
 
 if (selected=='Home') :
     st.title('Selamat Datang di Web Analisis Nasabah Bank')
+    st.write("Develop by Kelompok 3 DSS")
+    st.write("1. Stevi Stevanus")
+    st.write("2. Victory Polii")
+    st.write("3. Arwin Pangaila")
+    st.write("4. Rycko Frans")
+    st.write("5. Hendry Tangkuman")
 
 if (selected=='Visualisasi') :
     st.title('Tampilan Grafik')
