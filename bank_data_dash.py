@@ -164,6 +164,7 @@ if (selected=='Visualisasi') :
 if (selected=='Prediksi') :
     
     st.title('Prediksi klien berlangganan deposit jangka panjang')
+    st.write("Berikut merupakan fungsi untuk melakukan prediksi apakah nasabah akan berlangganan atau tidak berdasarkan beberapa data yang akan dimasukkan pada field yang telah disediakan. Antara lain: data usia, pekerjaan, status pernikahan, pendidikan, saldo rata-rata tahunan, jumlah hari sejak kontak terakhir, jumlah kontak sebelumnya dan status pinjaman. Setelah melengkapi data, maka fungsi akan melakukan prediksi apakah nasabah akan berlangganan atau tidak.")
 
     #create dictionaries for categorical features
     job_dict = {'admin.': 0, 'blue-collar': 1, 'entrepreneur': 2, 'housemaid': 3, 'management': 4,
