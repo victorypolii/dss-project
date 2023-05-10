@@ -216,9 +216,14 @@ if (selected=='Model') :
     
     if option == 'Data':
         # Menampilkan data dalam bentuk tabel
+        st.write("Data yang digunakan pada model ini adalah data nasabah dari sebuah institusi bank di porgutal yang mana data merupakan data bank marketing yang melakukan panggilan telpon secara langsung terhadap nasabah.")
+        st.write("source data https://archive.ics.uci.edu/ml/datasets/Bank+Marketing")
         st.write(df)
+        
     if option == 'Feature Importances':
         # Create a dataframe of feature importances
+        st.write("Pada bar chart dibawah ditampilkan tingkat importance sebuah variabel terhadap model prediksi.")
+        st.write("Didapati bahwa jumlah hari sejak kontak terakhir merupakan variabel paling berpengaruh dalam model prediksi.")
         feature_importances = pd.DataFrame(clf.feature_importances_, index=x.columns, columns=['Importance'])
         feature_importances.sort_values('Importance', ascending=False, inplace=True)
 
@@ -236,7 +241,9 @@ if (selected=='Model') :
         st.write(feature_importances)
     
     if option == 'Corelation Matrix':
-    
+        st.write("Corelation Matrix")
+        st.write("Berikut merupakan matriks korelasi yang dibuat berdasarkan data yang ada untuk melihat hubungan tiap variabel.")
+        st.write("Di dapati bahwa dari seluruh variabel hanya age, job, marital, education, balance, pdays, previous dan loan yang memiliki hubungan positif terhadap variabel y, sehingga kami memutuskan untuk menggunakan variabel tersebut kedalam model prediksi menggunakan random forest.")
         # Compute correlation matrix
         corr = data_bersih.corr()
         # Set figure size
@@ -249,7 +256,7 @@ if (selected=='Model') :
         st.pyplot(fig)
     
     if option == 'Confusion Matrix':
-               
+        st.write("Berikut merupakan Confusion Matrix dari model yang telah dibuat.")
         cm = confusion_matrix(y_test, y_pred)
         st.write("Confusion Matrix:")
         fig, ax = plt.subplots()
