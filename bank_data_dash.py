@@ -131,6 +131,7 @@ if (selected=='Visualisasi') :
     # menampilkan grafik yang dipilih
     if option == 'Histogram Usia':
         # code untuk menampilkan histogram usia
+        st.write("Berikut merupakan Histogram yang menampilkan distribusi usia yang ada pada data mulai dari belasan tahun hingga 90-an tahun. Distribusi terbanyak ada pada usia 30an hingga usia 40 dan usia 32 merupakan yang terbanyak.")
         st.pyplot(fig_age)
         st.write(usia_count)
     if option == 'Bar Chart Job Distribution':
