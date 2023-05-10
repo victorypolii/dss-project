@@ -105,20 +105,19 @@ if (selected=='Visualisasi') :
     ax.set_xlabel('Education')
     ax.set_ylabel('Nasabah')
     ax.set_title('Bar Chart Education Distribution')
-    education_count = df['marital'].value_counts()
+    education_count = df['education'].value_counts()
     education_count = pd.DataFrame({'Status':education_count.index, 'Jumlah':education_count.values})
     
     
     # Hitung jumlah nasabah berdasarkan status pinjaman
     count_loan = df['loan'].value_counts()
-
     # Visualisasi dengan Bar chart
     fig_loan, ax = plt.subplots()
     ax.bar(count_loan.index, count_loan.values)
     ax.set_xlabel('Loan')
     ax.set_ylabel('Jumlah Nasabah')
     ax.set_title('Bar Chart Loan Distribution')
-    loan_count = df['marital'].value_counts()
+    loan_count = df['loan'].value_counts()
     loan_count = pd.DataFrame({'Status':loan_count.index, 'Jumlah':loan_count.values})
         
     # membuat pilihan grafik yang tersedia
@@ -136,19 +135,28 @@ if (selected=='Visualisasi') :
         st.write(usia_count)
     if option == 'Bar Chart Job Distribution':
         # code untuk menampilkan bar chart job distribution
+        st.write("Berikut merupakan Bar chart yang menampilkan distribusi pekerjaan dari data. Terdapat 12 pekerjaan (termasuk unknown) yang ada pada data. Data pekerjaan di dominasi oleh tiga pekerjaan terbanyak antara lain: blue-collar, management dan technician. ketiganya merupakan data pekerjaan terbanyak dari data nasabah yang ada.")
         st.pyplot(fig_job)
         st.write(job_count)
     if option == 'Pie Chart Status Pernikahan' :
+        st.write("Berikut adalah Pie chart yang menampilkan persentase pernikahan dari nasabah. didapati bahwa dari keseluruhan data, 60.2% merupakan orang yang telah menikah, kemudian 28.3% merupakan orang yang belum menikah, dan sisanya adalah orang yang telah bercerai.")
         st.pyplot(fig_marital)
         st.write(marital_count)
     if option == 'Distribusi Balance berdasarkan Nasabah' :
+        st.write("Berikut merupakan distribusi balance berdasarkan nasabah yang subscribe atau tidak. Dari data yang ada dapat dilihat bahwa orang yang tidak berlangganan lebih banyak ketimbang yang berlangganan, dan juga data yang tidak berlangganan memiliki balance yang lebih bervariasi dibandingkan yang berlangganan. Namun dapat dilihat juga bahwa kebanyakan nasabah memiliki balance berjumlah nol atau kosong.")
         st.pyplot(fig_balance)
     if option == 'Scatter hubungan antara saldo dan usia nasabah.' :
+        st.write("Berikut merupakan hubungan antara balance dan usia menggunakan scatter plot.")
+        st.write("Dapat dilihat bahwa pada rentang usia 30 hingga 60, nasabah memiliki saldo yang lebih tinggi dari usia lain. Namun pada rentang usia ini nasabah memiliki saldo minus pada akun mereka. Dapat disimpulkan bahwa pada rentang usia ini saldo nasabah sangat bervariasi.")
         st.pyplot(fig_agebal)
     if option == 'Jumlah nasabah berdasarkan tingkat pendidikan.' :
+        st.write("Berikut merupakan tingkat pendidikan dari data nasabah.")
+        st.write("Dapat dilihat dari bar chart bahwa tingkat pendidikan secondary mendominasi pada data pendidikan, kemudian diikuti oleh tertiary dan primary. ")
         st.pyplot(fig_edu)
         st.write(education_count)
     if option == 'Jumlah nasabah berdasarkan status pinjaman':
+        st.write("Berikut merupakan data nasabah yang memiliki pinjaman dan yang tidak.")
+        st.write("Pada bar chart terlihat bahwa hanya sebagian kecil nasabah yang miliki pinjaman, sebagian besar tidak memiliki pinjaman sama sekali.")
         st.pyplot(fig_loan)
         st.write(loan_count)
 
